@@ -1,0 +1,12 @@
+{
+  "extends": "@squallium-template/cli/config/tsconfig.json",
+  "include": [
+    "packages/*/src",
+    "plugins/*/src",
+  ],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "useUnknownInCatchVariables": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@squallium-template/backend",
+  "description": "Backend core module for Squallium Template",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Squallium/lerna-workspaces-express-typescript-template",
+    "directory": "packages/backend"
+  },
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+  }
+}

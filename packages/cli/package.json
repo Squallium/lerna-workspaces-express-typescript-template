@@ -1,0 +1,10 @@
+{
+  "name": "@squallium-template/cli",
+  "description": "CLI for Squallium Template",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Squallium/lerna-workspaces-express-typescript-template",
+    "directory": "packages/cli"
+  }
+}
