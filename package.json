@@ -1,0 +1,15 @@
+{
+  "name": "lerna-workspaces-express-typescript-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Squallium/lerna-workspaces-express-typescript-template.git",
+  "author": "Borja Refoyo Ruiz <squallium3@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^7.1.0",
+    "typescript": "^5.1.3"
+  }
+}
