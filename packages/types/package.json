@@ -1,0 +1,10 @@
+{
+  "name": "@squallium-template/types",
+  "description": "Commont Typescript types used in Squallium Template",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Squallium/lerna-workspaces-express-typescript-template",
+    "directory": "packages/types"
+  }
+}
