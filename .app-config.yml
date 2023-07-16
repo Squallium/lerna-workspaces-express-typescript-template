@@ -1,0 +1,10 @@
+server:
+  port:
+    $env:
+      default: 3100
+      production: 80
+
+databaseCore:
+  host: localhost
+  database: template-dev
+  username: template

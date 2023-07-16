@@ -1,0 +1,44 @@
+type: object
+additionalProperties: false
+
+required:
+  - server
+  - databaseCore
+  - telegram
+
+properties:
+  server: { $ref: '#/definitions/Server' }
+  databaseCore: { $ref: '#/definitions/Database' }
+  telegram: { $ref: '#/definitions/Telegram' }
+
+definitions:
+  Server:
+    type: object
+    additionalProperties: false
+    required: [port]
+    properties:
+      port: { $ref: '#/definitions/IpPort' }
+
+  Database:
+    type: object
+    additionalProperties: false
+    required: [host, database, username, password]
+    properties:
+      host: { type: string }
+      port: { $ref: '#/definitions/IpPort' }
+      database: { type: string }
+      username: { type: string }
+      password: { type: string, secret: true }
+
+  Telegram:
+    type: object
+    additionalProperties: false
+    required: [ apiKey, chatId ]
+    properties:
+      apiKey: { type: string, secret: true }
+      chatId: { type: string, secret: true }
+
+  IpPort:
+    type: integer
+    minimum: 0
+    maximum: 65535
