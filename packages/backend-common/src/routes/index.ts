@@ -1,0 +1,1 @@
+export {HealthcheckRoutes} from './healthcheck.routes';
