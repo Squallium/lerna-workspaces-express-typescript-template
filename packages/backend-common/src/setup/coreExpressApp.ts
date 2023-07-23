@@ -43,13 +43,13 @@ export class CoreExpressApp {
         // AdminJS (former admin bro)
         // const AdminJS = require('adminjs')
         // const AdminJSExpress = require('@adminjs/express')
-        // const AdminJSMongoose = require('@adminjs/mongoose')
+        const AdminJSMongoose = require('@adminjs/mongoose')
 
         // We have to tell AdminJS that we will manage mongoose resources with it
-        // AdminJS.registerAdapter({
-        //     Resource: AdminJSMongoose.Resource,
-        //     Database: AdminJSMongoose.Database,
-        // });
+        AdminJS.registerAdapter({
+            Resource: AdminJSMongoose.Resource,
+            Database: AdminJSMongoose.Database,
+        });
 
         // synchronous process
         Promise.all([
@@ -80,11 +80,11 @@ export class CoreExpressApp {
 
             // Pass all configuration settings to AdminBro
             const adminJs = new AdminJS({
-            //     resources: [
-            //         // Lazy Begin Bro
-            //         CoreConn.model('Report'),
-            //         // Lazy End Bro
-            //     ].concat(this.expressApp.getAdminBroResources()),
+                resources: [
+                    // Lazy Begin Bro
+                    CoreConn.model('Report'),
+                    // Lazy End Bro
+                ].concat(this.expressApp.getAdminBroResources()),
                 rootPath: '/admin',
             });
 
