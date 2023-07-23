@@ -1,0 +1,1 @@
+export {IExpressApp} from './microserviceapp.interface'
