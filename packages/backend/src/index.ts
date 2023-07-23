@@ -4,6 +4,9 @@ import {StartUp} from "@squallium-template/backend-common/src";
 import { config, loadConfig } from '@app-config/main';
 import { dirname, resolve as resolvePath } from 'path';
 import { ItemRoutes } from "@squallium-template/plugin-todo-backend/src"
+import url from "url";
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 // import routes
 // import services
@@ -21,7 +24,7 @@ export class CoreTestMicroServiceApp implements IExpressApp {
         return [
             // loading app-config synchronously
             loadConfig({
-                directory: dirname(resolvePath(__dirname, '../../')),
+                directory: dirname(resolvePath(__dirname, '../../../')),
             })
             // Lazy Begin Promises
             // Lazy End Promises

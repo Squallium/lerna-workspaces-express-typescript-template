@@ -2,15 +2,17 @@
   "name": "@squallium-template/backend",
   "description": "Backend core module for Squallium Template",
   "version": "1.0.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/Squallium/lerna-workspaces-express-typescript-template",
     "directory": "packages/backend"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./build/index.js",
     "start:dev": "NODE_ENV=development webpack",
-    "build": "webpack"
+    "build": "webpack",
+    "build:tsc": "tsc --build"
   },
   "dependencies": {
     "@app-config/main": "2",

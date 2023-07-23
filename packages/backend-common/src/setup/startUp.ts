@@ -5,8 +5,8 @@ import {config} from "@app-config/main";
 /**
  * Module dependencies.
  */
-const debug = require('debug')('base-microservice:server');
-const http = require('http');
+// const debug = require('debug')('base-microservice:server');
+import * as http from 'http';
 
 export class StartUp {
 
@@ -96,10 +96,12 @@ export class StartUp {
              */
             function onListening() {
                 var addr = server.address();
-                var bind = typeof addr === 'string'
-                    ? 'pipe ' + addr
-                    : 'port ' + addr.port;
-                debug('Listening on ' + bind);
+                if (addr != null) {
+                    var bind = typeof addr === 'string'
+                        ? 'pipe ' + addr
+                        : 'port ' + addr.port;
+                    // debug('Listening on ' + bind);
+                }
             }
         });
     }

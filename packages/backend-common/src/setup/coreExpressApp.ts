@@ -1,8 +1,8 @@
 import express from 'express';
 import * as core from "express-serve-static-core";
 
-// import AdminJS from 'adminjs'
-// import AdminJSExpress from '@adminjs/express'
+import AdminJS from 'adminjs'
+import AdminJSExpress from '@adminjs/express'
 // import * as AdminJSMongoose from '@adminjs/mongoose'
 
 import {IExpressApp} from "../interfaces";
@@ -14,11 +14,19 @@ import {CoreConn} from "../connections";
 // Lazy End Imports
 
 // library references
-const createError = require('http-errors');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const cors = require('cors');
+// const createError = require('http-errors');
+// const path = require('path');
+// const cookieParser = require('cookie-parser');
+// const logger = require('morgan');
+// const cors = require('cors');
+
+import createError from 'http-errors';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import cors from 'cors';
+import url from "url";
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 export class CoreExpressApp {
 
@@ -71,18 +79,18 @@ export class CoreExpressApp {
             this.expressApp.setRoutes(this.app)
 
             // Pass all configuration settings to AdminBro
-            // const adminJs = new AdminJS({
+            const adminJs = new AdminJS({
             //     resources: [
             //         // Lazy Begin Bro
             //         CoreConn.model('Report'),
             //         // Lazy End Bro
             //     ].concat(this.expressApp.getAdminBroResources()),
-            //     rootPath: '/admin',
-            // });
+                rootPath: '/admin',
+            });
 
             // Build and use a router which will handle all AdminBro routes
-            // const router = AdminJSExpress.buildRouter(adminJs);
-            // this.app.use(adminJs.options.rootPath, router);
+            const router = AdminJSExpress.buildRouter(adminJs);
+            this.app.use(adminJs.options.rootPath, router);
 
             // catch 404 and forward to error handler
             this.app.use(function (req, res, next) {
