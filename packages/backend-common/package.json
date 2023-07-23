@@ -9,13 +9,12 @@
     "directory": "packages/backend"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "tsc",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "build": "tsc"
   },
   "dependencies": {
     "@adminjs/express": "^6.0.0",
     "@adminjs/mongoose": "^4.0.0",
+    "@adminjs/themes": "^1.0.0",
     "@squallium-template/types": "workspace:^",
     "adminjs": "^7.1.0",
     "cookie-parser": "^1.4.6",

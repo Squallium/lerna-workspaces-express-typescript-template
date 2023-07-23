@@ -3,6 +3,7 @@ import * as core from "express-serve-static-core";
 
 import AdminJS from 'adminjs'
 import AdminJSExpress from '@adminjs/express'
+import {dark, light, noSidebar} from "@adminjs/themes";
 // import * as AdminJSMongoose from '@adminjs/mongoose'
 
 import {IExpressApp} from "../interfaces";
@@ -14,12 +15,6 @@ import {CoreConn} from "../connections";
 // Lazy End Imports
 
 // library references
-// const createError = require('http-errors');
-// const path = require('path');
-// const cookieParser = require('cookie-parser');
-// const logger = require('morgan');
-// const cors = require('cors');
-
 import createError from 'http-errors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
@@ -80,6 +75,8 @@ export class CoreExpressApp {
 
             // Pass all configuration settings to AdminBro
             const adminJs = new AdminJS({
+                defaultTheme: dark.id,
+                availableThemes: [dark, light, noSidebar],
                 resources: [
                     // Lazy Begin Bro
                     CoreConn.model('Report'),

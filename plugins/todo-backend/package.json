@@ -8,9 +8,7 @@
     "directory": "plugins/todo-backend"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "tsc",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "build": "tsc"
   },
   "dependencies": {
     "@squallium-template/backend-common": "workspace:^"

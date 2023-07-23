@@ -2,10 +2,6 @@ import {CoreExpressApp} from "./coreExpressApp";
 import {IExpressApp} from "../interfaces";
 import {config} from "@app-config/main";
 
-/**
- * Module dependencies.
- */
-// const debug = require('debug')('base-microservice:server');
 import * as http from 'http';
 
 export class StartUp {
@@ -95,12 +91,12 @@ export class StartUp {
              * Event listener for HTTP server "listening" event.
              */
             function onListening() {
-                var addr = server.address();
+                const addr = server.address();
                 if (addr != null) {
-                    var bind = typeof addr === 'string'
+                    const bind = typeof addr === 'string'
                         ? 'pipe ' + addr
                         : 'port ' + addr.port;
-                    // debug('Listening on ' + bind);
+                    console.log('Listening on ' + bind);
                 }
             }
         });
