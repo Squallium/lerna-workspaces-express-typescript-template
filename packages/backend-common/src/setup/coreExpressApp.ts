@@ -49,8 +49,8 @@ export class CoreExpressApp {
         // synchronous process
         Promise.all([
             // Lazy Begin Promises
-            // CoreConn,
-            Promise.resolve(),
+            CoreConn,
+            // Promise.resolve(),
             // Lazy End Promises
         ].concat(this.expressApp.getSyncProcess())).then(results => {
             console.log("Sync process finished");
